@@ -1,3 +1,4 @@
+# pip3 install 'django<4'
 # python3 manage.py runserver
 # python3 manage.py makemigrations --dry-run
 # python3 manage.py showmigrations
@@ -6,7 +7,7 @@
 # python3 manage.py migrate
 # python3 manage.py createsuperuser
 # username: ckz8780, pantera101
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Item
 
 # Create your views here.
@@ -21,4 +22,10 @@ def get_todo_list(request):
 
 
 def add_item(request):
-    return render(request, "todo/add_item.html")
+    if request.method == "POST":
+        name = request.POST.get('item_name')
+        done = 'done' in request.POST
+        Item.objects.create(name=name, done=done)
+
+        return redirect("get_todo_list")
+    return render(request, 'todo/add_item.html')
