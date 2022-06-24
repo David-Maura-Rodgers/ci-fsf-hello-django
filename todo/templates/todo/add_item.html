@@ -10,7 +10,7 @@
     <h1>Add a To Do Item:</h1>
     <form method="POST" action="add">
         {% csrf_token %}
-        {{ form }} <!-- this is a template variable -->
+        {{ form.as_p }} <!-- this is a template variable -->
         <div>
             <p>
                 <button type="submit">Add Item</button>
