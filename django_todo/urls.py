@@ -25,4 +25,3 @@ urlpatterns = [
     path('toggle/<item_id>', views.toggle_item, name='toggle'),
     path('delete/<item_id>', views.delete_item, name='delete'),
 ]
-
