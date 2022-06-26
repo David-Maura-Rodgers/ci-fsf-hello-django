@@ -1,6 +1,11 @@
 # python3 manage.py test
 # pip3 install 'django<4'
 # python3 manage.py runserver
+# pip3 install coverage
+# coverage run --source=todo manage.py test
+# coverage report
+# coverage html
+# python3 -m http.server
 from django.test import TestCase
 from .forms import ItemForm
 

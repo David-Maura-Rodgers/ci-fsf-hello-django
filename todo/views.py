@@ -7,6 +7,8 @@
 # python3 manage.py migrate
 # python3 manage.py createsuperuser
 # username: ckz8780, pantera101
+# heroku login -i
+# pip3 install psycopg2-binary, pip3 install gunicorn
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
 from .forms import ItemForm
